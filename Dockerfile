@@ -7,4 +7,4 @@ COPY keycloak /opt/keycloak/data/import
 
 ENTRYPOINT ["/bin/sh", "-c"]
 
-CMD ["/opt/keycloak/bin/kc.sh start-dev --http-port=${PORT:-8080} --import-realm"]
+CMD ["/opt/keycloak/bin/kc.sh start-dev --http-host=0.0.0.0 --http-port=${PORT:-8080} --import-realm"]
