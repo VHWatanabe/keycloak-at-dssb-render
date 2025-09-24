@@ -5,6 +5,4 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
 COPY keycloak /opt/keycloak/data/import
 
-EXPOSE 8080
-
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=8080", "--import-realm"]
+CMD ["/bin/sh", "-c", "/opt/keycloak/bin/kc.sh start-dev --http-port=${PORT:-8080} --import-realm"]
